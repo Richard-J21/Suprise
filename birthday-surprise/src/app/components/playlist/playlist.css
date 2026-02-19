@@ -1,0 +1,137 @@
+/* Container - Deep Romantic Dark Theme */
+.playlist-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0505 0%, #3d0c11 50%, #1a0505 100%);
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elegant Typography */
+.love-title {
+  font-family: 'Playfair Display', serif;
+  color: #ffb3c1;
+  font-size: 3rem;
+  margin-bottom: 5px;
+  text-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+}
+
+.love-subtitle {
+  color: #ff758f;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffb3c1;
+  border: 1px solid #ff4d6d;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+.back-btn:hover { background: #ff4d6d; color: white; }
+
+/* The Song Cards */
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  justify-content: center;
+}
+
+.song-card-love {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 15px;
+  border: 1px solid rgba(255, 77, 109, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+}
+
+.song-card-love:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 77, 109, 0.15);
+  border-color: #ff4d6d;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.thumbnail-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.thumbnail-container img { width: 100%; display: block; }
+
+/* Heart Play Button Overlay */
+.love-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(169, 24, 74, 0.7);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 0; transition: 0.3s;
+}
+.song-card-love:hover .love-overlay { opacity: 1; }
+.play-heart { font-size: 3rem; animation: heartbeat 1.2s infinite; }
+
+/* Card Text */
+.song-info-love { margin-top: 15px; }
+.song-title { color: #fff; font-size: 1.1rem; margin: 0; font-weight: 600; }
+.movie-name { color: #ffb3c1; font-size: 0.85rem; margin-top: 5px; }
+
+/* Floating Hearts Background Animation */
+.floating-hearts {
+  position: absolute; width: 100%; height: 100%; top: 0; pointer-events: none;
+}
+.heart {
+  position: absolute; bottom: -50px; font-size: 20px;
+  animation: float 6s infinite ease-in; opacity: 0;
+}
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 50%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 70%; animation-delay: 1s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.playlist-footer { margin-top: 60px; color: #ffb3c1; opacity: 0.7; font-size: 0.9rem; }
+
+.cute-nav-btn {
+  margin-top: 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+  transition: 0.3s;
+}
+.cute-nav-btn:hover {
+  transform: scale(1.05);
+  background: #ff758f;
+}

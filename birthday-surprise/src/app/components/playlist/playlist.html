@@ -1,0 +1,42 @@
+<div class="playlist-page">
+  <!-- Background Decorations -->
+  <div class="floating-hearts">
+    <div class="heart" *ngFor="let i of [1,2,3,4,5,6]">❤️</div>
+  </div>
+
+  <header class="playlist-header">
+    <button class="back-btn" (click)="goBack()">← Back to Memories</button>
+    <h1 class="love-title">Your Birthday Soundtrack 💌</h1>
+    <p class="love-subtitle">Every song here has a piece of my heart...</p>
+  </header>
+
+  <div class="songs-grid">
+    <a *ngFor="let song of songs" 
+       [href]="song.fullLink" 
+       target="_blank" 
+       class="song-card-love">
+      
+      <div class="thumbnail-container">
+        <img [src]="song.thumb" alt="song cover">
+        <div class="love-overlay">
+           <span class="play-heart">❤️</span>
+           <p>Play Song</p>
+        </div>
+      </div>
+
+      <div class="song-info-love">
+        <h3 class="song-title">{{song.title}}</h3>
+        <p class="movie-name">✨ {{song.movie}}</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- playlist.html -->
+<div class="playlist-footer">
+  <p>Enjoy your day, My Best Friend! 🎂</p>
+  <!-- New Button -->
+  <button class="cute-nav-btn" routerLink="/final-message">
+    I have one last thing to tell you... 💌
+  </button>
+</div>
+</div>

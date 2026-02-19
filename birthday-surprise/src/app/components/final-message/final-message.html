@@ -1,0 +1,42 @@
+<div class="final-container">
+  <div class="floating-hearts">
+    <div class="heart" *ngFor="let i of [1,2,3,4,5]">❤️</div>
+  </div>
+
+  <h1 class="title">For You...</h1>
+
+  <!-- The Envelope -->
+  <div class="envelope-wrapper" [class.open]="isEnvelopeOpened" (click)="openEnvelope()">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="body"></div>
+      <div class="letter">
+        <div class="text-line"></div>
+        <div class="text-line"></div>
+        <div class="text-line"></div>
+      </div>
+      <div class="heart-seal">❤️</div>
+    </div>
+  </div>
+
+  <p class="hint" *ngIf="!isEnvelopeOpened">Tap the envelope to open your letter</p>
+
+  <!-- Final Message Popup -->
+  <div class="modal-overlay" *ngIf="showMessage">
+    <div class="modal-card">
+      <div class="modal-text">
+        <h2>From My Heart... 🖋️</h2>
+        <div class="divider"></div>
+        <p>
+          I just wanted to end this by saying that you are one of the most important people in my life. 
+          No matter how much we fight or how much time passes, my respect and love for our friendship will never change.
+          <br><br>
+          Thank you for making my world a little brighter just by being in it.
+          <br><br>
+          <b>Happy Birthday, My Best Friend! ❤️</b>
+        </p>
+        <button class="close-btn" (click)="showMessage = false">Close with Love</button>
+      </div>
+    </div>
+  </div>
+</div>

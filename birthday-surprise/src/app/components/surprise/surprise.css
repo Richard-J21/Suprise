@@ -1,0 +1,79 @@
+.surprise-container {
+  min-height: 100vh;
+  background: #fffafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* PERFECT CENTERING */
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Header & Message Card */
+.love-title { font-family: 'Playfair Display', serif; color: #800e13; font-size: 3rem; margin-bottom: 30px; }
+.message-card {
+  background: white; padding: 30px; border-radius: 20px;
+  max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #ffe5ec; margin-bottom: 50px;
+}
+
+/* Grid Logic */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 550px;
+}
+
+.polaroid {
+  background: white; padding: 10px 10px 20px 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  cursor: pointer; transition: 0.3s;
+}
+.polaroid:hover { transform: translateY(-5px) rotate(2deg); }
+
+/* THIS FIXES THE DISPLAY ISSUE */
+.img-crop {
+  width: 100%;
+  height: 180px; /* Ensure there is a height */
+  overflow: hidden;
+  background: #f0f0f0; /* See the box while image loads */
+}
+.img-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image to fit perfectly */
+}
+
+/* Popup / Modal */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(45, 10, 15, 0.95); backdrop-filter: blur(10px);
+  display: flex; justify-content: center; align-items: center; z-index: 9999;
+}
+
+.modal-card {
+  background: white; width: 90%; max-width: 400px;
+  border-radius: 30px; overflow: hidden; position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  animation: popUp 0.4s ease-out;
+}
+
+@keyframes popUp { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.modal-img-box { width: 100%; height: 300px; }
+.modal-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.modal-text { padding: 30px; }
+.divider { width: 40px; height: 3px; background: #ffd700; margin: 15px auto; }
+
+.close-x {
+  position: absolute; top: 15px; right: 20px; background: white;
+  border: none; border-radius: 50%; width: 40px; height: 40px;
+  font-size: 24px; color: #ad2831; cursor: pointer; z-index: 10;
+}
+
+.next-btn {
+  margin-top: 60px; background: #800e13; color: white;
+  border: none; padding: 15px 40px; border-radius: 50px;
+  font-weight: 600; cursor: pointer;
+}

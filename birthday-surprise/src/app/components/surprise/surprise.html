@@ -1,0 +1,86 @@
+<div class="surprise-container">
+
+  <!-- 1. Centered Header -->
+  <header class="hero">
+    <h1 class="love-title">Happy Birthday Chindeyy !❤️</h1>
+    <div class="message-card">
+      <h2>To My Dearest</h2>
+      <p>Every memory with you is a treasure. Thank you for being you!</p>
+      <div class="gold-line"></div>
+    </div>
+  </header>
+
+  <!-- 2. Centered Memory Grid -->
+  <div class="memories-section">
+    <h3 class="section-label">TAP TO VIEW OUR MEMORIES</h3>
+    <div class="photo-grid">
+
+      <!-- Photo 1 -->
+      <div class="polaroid"
+           (click)="openPopup('assets/first.jpg', 'First Meet 🍦', 'The first time I saw you at , I didn’t even know who you were. But the way you looked at me gave me butterflies I couldn’t explain. That day, all your friends spoke to me, yet you stayed silent. Everyone waved goodbye to me… except you.
+But just when I thought you wouldn’t, after you got into the bus, one hand slowly reached out of the window and waved at me. That moment is etched in my heart forever. I will never forget that day — the day a simple glance turned into a beautiful memory.')">
+        <div class="img-crop">
+          <img src="assets/first.jpg" alt="Memory 1">
+        </div>
+        <p>Our First Meet</p>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="polaroid"
+           (click)="openPopup('assets/second.jpg', 'Memorable Day ☕', 'The second thing is why I like you. In the beginning, I never thought we would become this close. But the way you spoke to me, the way you treated me, touched something special deep inside my heart. You shared everything with me without hesitation, and that made me feel so comfortable that I could share each and every thing with you too.
+One of my most memorable days was when you came to meet me at the bus stand while I was waiting for my bus. That was the first time we met after we had grown close. You were wearing a yellow dress, and I swear, I will never forget that day. It wasn’t just a meeting — it was a moment that stayed with me forever.')">
+        <div class="img-crop">
+          <img src="assets/second.jpg" alt="Memory 2">
+        </div>
+        <p>Memorable Day</p>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="polaroid"
+           (click)="openPopup('assets/third.jpg', 'Our Fights', 'The third thing is our fights. We fight a lot — sometimes it feels like a day isn’t complete without one. Even over the smallest things, we argue endlessly. And yet, strangely, I love those fights, because no matter what happens, we never let go of each other. That’s what makes us us.
+Sometimes I tell myself I don’t want to talk to you anymore, but after a while I just can’t hold that feeling. Something pulls me back to you every single time. I truly believe we share a special bond — one that I hope stays with us forever. Yes, we fight a lot… but maybe that’s just another way our hearts refuse to stay apart.')">
+        <div class="img-crop">
+          <img src="assets/third.jpg" alt="Memory 3">
+        </div>
+        <p>Our Fights</p>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="polaroid"
+           (click)="openPopup('assets/fourth.jpg', 'Thank You', 'The final thing is thank you. Thank you for always being with me through my ups and downs. Thank you for listening patiently to all my endless blabbering. Thank you for always being there when I needed someone the most. Thank you for giving me your shoulder when I needed to cry. You never get bored of talking with me, and that means more than you know.
+I may not be the most interesting person in the world, but you never forget to call me, never forget to check on me, and never make me feel unimportant. Thank you for everything — for your time, your care, your patience, and most of all, for being you.')">
+        <div class="img-crop">
+          <img src="assets/fourth.jpg" alt="Memory 4">
+        </div>
+        <p>Thank You</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Navigation Button -->
+  <button class="next-btn" (click)="goToPlaylist()">
+    Open Your Birthday Playlist 🎵
+  </button>
+
+  <!-- 4. THE POPUP MODAL -->
+  <div class="modal-overlay" *ngIf="isModalOpen" (click)="closePopup()">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+
+      <button class="close-x" (click)="closePopup()">&times;</button>
+
+      <div class="modal-img-box">
+        <img [src]="modalData.image" alt="Full Memory">
+      </div>
+
+      <div class="modal-text">
+        <span class="heart-tag">A BEAUTIFUL MOMENT</span>
+        <h2>{{ modalData.title }}</h2>
+        <div class="divider"></div>
+        <p>{{ modalData.desc }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
